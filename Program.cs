@@ -1,8 +1,22 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using WhatTheHecksForDinner.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddDbContext<WhatTheHecksForDinnerContext>(options =>
+        options.UseSqlite(builder.Configuration.GetConnectionString("WhatTheHecksForDinnerContext")));
+}
+else
+{
+    builder.Services.AddDbContext<WhatTheHecksForDinnerContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("ProductionMovieContext")));
+}
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
