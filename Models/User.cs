@@ -14,8 +14,8 @@ namespace WhatTheHecksForDinner.Models
 
         public int TotalMealscooked { get; set; } = 0;
 
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
         public DateTime LastLogin { get; set; }
     }
 
