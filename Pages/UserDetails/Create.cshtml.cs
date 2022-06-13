@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using WhatTheHecksForDinner.Data;
 using WhatTheHecksForDinner.Models;
 
-namespace WhatTheHecksForDinner.Pages.Users
+namespace WhatTheHecksForDinner.Pages.UserDetails
 {
     public class CreateModel : PageModel
     {
@@ -25,18 +25,18 @@ namespace WhatTheHecksForDinner.Pages.Users
         }
 
         [BindProperty]
-        public User User { get; set; } = default!;
+        public UserDetail UserDetail { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.User == null || User == null)
+          if (!ModelState.IsValid || _context.UserDetails == null || UserDetail == null)
             {
                 return Page();
             }
 
-            _context.User.Add(User);
+            _context.UserDetails.Add(UserDetail);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

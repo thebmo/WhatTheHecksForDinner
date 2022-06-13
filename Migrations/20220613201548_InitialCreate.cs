@@ -10,7 +10,7 @@ namespace WhatTheHecksForDinner.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "UserDetails",
                 columns: table => new
                 {
                     ID = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -25,14 +25,14 @@ namespace WhatTheHecksForDinner.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User", x => x.ID);
+                    table.PrimaryKey("PK_UserDetails", x => x.ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "User");
+                name: "UserDetails");
         }
     }
 }

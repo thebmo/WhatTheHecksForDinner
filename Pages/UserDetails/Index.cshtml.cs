@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using WhatTheHecksForDinner.Data;
 using WhatTheHecksForDinner.Models;
 
-namespace WhatTheHecksForDinner.Pages.Users
+namespace WhatTheHecksForDinner.Pages.UserDetails
 {
     public class IndexModel : PageModel
     {
@@ -19,13 +19,13 @@ namespace WhatTheHecksForDinner.Pages.Users
             _context = context;
         }
 
-        public IList<User> User { get;set; } = default!;
+        public IList<UserDetail> UserDetails { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.User != null)
+            if (_context.UserDetails != null)
             {
-                User = await _context.User.ToListAsync();
+                UserDetails = await _context.UserDetails.ToListAsync();
             }
         }
     }

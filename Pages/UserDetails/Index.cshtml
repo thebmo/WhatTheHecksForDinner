@@ -1,5 +1,5 @@
 @page
-@model WhatTheHecksForDinner.Pages.Users.IndexModel
+@model WhatTheHecksForDinner.Pages.UserDetails.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -14,37 +14,37 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].ID)
+                @Html.DisplayNameFor(model => model.UserDetails[0].ID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].FirstName)
+                @Html.DisplayNameFor(model => model.UserDetails[0].FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].LastName)
+                @Html.DisplayNameFor(model => model.UserDetails[0].LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].UserName)
+                @Html.DisplayNameFor(model => model.UserDetails[0].UserName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].Email)
+                @Html.DisplayNameFor(model => model.UserDetails[0].Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].TotalMealscooked)
+                @Html.DisplayNameFor(model => model.UserDetails[0].TotalMealscooked)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].CreatedAt)
+                @Html.DisplayNameFor(model => model.UserDetails[0].CreatedAt)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].UpdatedAt)
+                @Html.DisplayNameFor(model => model.UserDetails[0].UpdatedAt)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].LastLogin)
+                @Html.DisplayNameFor(model => model.UserDetails[0].LastLogin)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.User) {
+@foreach (var item in Model.UserDetails) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ID)

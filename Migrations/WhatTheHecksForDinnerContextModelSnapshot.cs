@@ -17,7 +17,7 @@ namespace WhatTheHecksForDinner.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.5");
 
-            modelBuilder.Entity("WhatTheHecksForDinner.Models.User", b =>
+            modelBuilder.Entity("WhatTheHecksForDinner.Models.UserDetail", b =>
                 {
                     b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
@@ -53,7 +53,7 @@ namespace WhatTheHecksForDinner.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("User");
+                    b.ToTable("UserDetails");
                 });
 #pragma warning restore 612, 618
         }

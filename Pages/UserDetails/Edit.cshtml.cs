@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using WhatTheHecksForDinner.Data;
 using WhatTheHecksForDinner.Models;
 
-namespace WhatTheHecksForDinner.Pages.Users
+namespace WhatTheHecksForDinner.Pages.UserDetails
 {
     public class EditModel : PageModel
     {
@@ -21,21 +21,21 @@ namespace WhatTheHecksForDinner.Pages.Users
         }
 
         [BindProperty]
-        public User User { get; set; } = default!;
+        public UserDetail UserDetail { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
-            if (id == null || _context.User == null)
+            if (id == null || _context.UserDetails == null)
             {
                 return NotFound();
             }
 
-            var user =  await _context.User.FirstOrDefaultAsync(m => m.ID == id);
-            if (user == null)
+            var userdetail =  await _context.UserDetails.FirstOrDefaultAsync(m => m.ID == id);
+            if (userdetail == null)
             {
                 return NotFound();
             }
-            User = user;
+            UserDetail = userdetail;
             return Page();
         }
 
@@ -48,7 +48,7 @@ namespace WhatTheHecksForDinner.Pages.Users
                 return Page();
             }
 
-            _context.Attach(User).State = EntityState.Modified;
+            _context.Attach(UserDetail).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace WhatTheHecksForDinner.Pages.Users
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserExists(User.ID))
+                if (!UserDetailExists(UserDetail.ID))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace WhatTheHecksForDinner.Pages.Users
             return RedirectToPage("./Index");
         }
 
-        private bool UserExists(Guid id)
+        private bool UserDetailExists(Guid id)
         {
-          return (_context.User?.Any(e => e.ID == id)).GetValueOrDefault();
+          return (_context.UserDetails?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }

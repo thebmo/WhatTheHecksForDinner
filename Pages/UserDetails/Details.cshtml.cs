@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using WhatTheHecksForDinner.Data;
 using WhatTheHecksForDinner.Models;
 
-namespace WhatTheHecksForDinner.Pages.Users
+namespace WhatTheHecksForDinner.Pages.UserDetails
 {
     public class DetailsModel : PageModel
     {
@@ -19,23 +19,23 @@ namespace WhatTheHecksForDinner.Pages.Users
             _context = context;
         }
 
-      public User User { get; set; } = default!; 
+      public UserDetail UserDetail { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
-            if (id == null || _context.User == null)
+            if (id == null || _context.UserDetails == null)
             {
                 return NotFound();
             }
 
-            var user = await _context.User.FirstOrDefaultAsync(m => m.ID == id);
-            if (user == null)
+            var userDetail = await _context.UserDetails.FirstOrDefaultAsync(m => m.ID == id);
+            if (userDetail == null)
             {
                 return NotFound();
             }
             else 
             {
-                User = user;
+                UserDetail = userDetail;
             }
             return Page();
         }

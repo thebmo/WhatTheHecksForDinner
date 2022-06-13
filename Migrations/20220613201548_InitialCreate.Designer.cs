@@ -11,7 +11,7 @@ using WhatTheHecksForDinner.Data;
 namespace WhatTheHecksForDinner.Migrations
 {
     [DbContext(typeof(WhatTheHecksForDinnerContext))]
-    [Migration("20220528190341_InitialCreate")]
+    [Migration("20220613201548_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,7 +19,7 @@ namespace WhatTheHecksForDinner.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.5");
 
-            modelBuilder.Entity("WhatTheHecksForDinner.Models.User", b =>
+            modelBuilder.Entity("WhatTheHecksForDinner.Models.UserDetail", b =>
                 {
                     b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
@@ -55,7 +55,7 @@ namespace WhatTheHecksForDinner.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("User");
+                    b.ToTable("UserDetails");
                 });
 #pragma warning restore 612, 618
         }
