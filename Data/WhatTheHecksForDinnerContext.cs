@@ -13,6 +13,6 @@ namespace WhatTheHecksForDinner.Data {
         {
         }
 
-        public DbSet<User>? User { get; set; }
+        public DbSet<UserDetail>? UserDetails { get; set; }
     }
 }

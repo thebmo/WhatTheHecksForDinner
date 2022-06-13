@@ -1,0 +1,70 @@
+@page
+@model WhatTheHecksForDinner.Pages.UserDetails.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>User Details</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UserDetail.ID" />
+            <div class="form-group">
+                <label asp-for="UserDetail.FirstName" class="control-label"></label>
+                <input asp-for="UserDetail.FirstName" class="form-control" />
+                <span asp-validation-for="UserDetail.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserDetail.LastName" class="control-label"></label>
+                <input asp-for="UserDetail.LastName" class="form-control" />
+                <span asp-validation-for="UserDetail.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserDetail.UserName" class="control-label"></label>
+                <input asp-for="UserDetail.UserName" class="form-control" />
+                <span asp-validation-for="UserDetail.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserDetail.Email" class="control-label"></label>
+                <input asp-for="UserDetail.Email" class="form-control" />
+                <span asp-validation-for="UserDetail.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserDetail.TotalMealscooked" class="control-label"></label>
+                <input asp-for="UserDetail.TotalMealscooked" class="form-control" />
+                <span asp-validation-for="UserDetail.TotalMealscooked" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserDetail.CreatedAt" class="control-label"></label>
+                <input asp-for="UserDetail.CreatedAt" class="form-control" />
+                <span asp-validation-for="UserDetail.CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserDetail.UpdatedAt" class="control-label"></label>
+                <input asp-for="UserDetail.UpdatedAt" class="form-control" />
+                <span asp-validation-for="UserDetail.UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserDetail.LastLogin" class="control-label"></label>
+                <input asp-for="UserDetail.LastLogin" class="form-control" />
+                <span asp-validation-for="UserDetail.LastLogin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
